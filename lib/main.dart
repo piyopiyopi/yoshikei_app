@@ -16,9 +16,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-        primarySwatch: Colors.red,
+        accentColor: Color.fromARGB(255, 230, 0, 18),
         disabledColor: Color.fromARGB(255, 200, 200, 200),
-        accentColor: Colors.white,
+        primaryColorLight: Colors.white,
         scaffoldBackgroundColor: Colors.white,
         textTheme: GoogleFonts.hachiMaruPopTextTheme(Theme.of(context).textTheme),
       ),
@@ -63,10 +63,9 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         title: Image.network("https://www.you-shoku.net/img/base/yoshikeilogo.png", height: 40, width: double.infinity,),
-        backgroundColor: Theme.of(context).accentColor,
+        backgroundColor: Theme.of(context).primaryColorLight,
       ),
       body: Container(
-        margin: EdgeInsets.only(top: 20),
         child: SingleChildScrollView(
           child: loading ? Center(
             child: Container(
@@ -79,13 +78,13 @@ class _MyHomePageState extends State<MyHomePage> {
               for(var i=0; i<menu_list["body"].length; i++)...{
                 Container(
                   height: 40,
-                  color: Theme.of(context).primaryColor,
+                  color: Theme.of(context).accentColor,
                   alignment: Alignment.center,
                   child: Text(
                     menu_list["body"][i]["date"], 
                     style: TextStyle(
                       fontSize: 18, 
-                      color: Theme.of(context).accentColor
+                      color: Theme.of(context).primaryColorLight
                     ),
                   ),
                 ),
@@ -148,7 +147,7 @@ class _MyHomePageState extends State<MyHomePage> {
     child: Image.network(
       path, 
       fit: BoxFit.cover,
-      color: Theme.of(context).accentColor.withOpacity(0.5),
+      color: Theme.of(context).primaryColorLight.withOpacity(0.5),
       colorBlendMode: (menu_list["body"][i]["sold"] == 1) ? BlendMode.softLight : BlendMode.dst
     ),
   );
@@ -158,7 +157,7 @@ class _MyHomePageState extends State<MyHomePage> {
     effect: JumpingDotEffect(
         dotHeight: 10,
         dotWidth: 10,
-        activeDotColor: Theme.of(context).primaryColor,
+        activeDotColor: Theme.of(context).accentColor,
         dotColor: Theme.of(context).disabledColor),
   );
 }
