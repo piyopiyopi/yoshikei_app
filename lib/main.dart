@@ -147,8 +147,8 @@ class _MyHomePageState extends State<MyHomePage> {
     child: Image.network(
       path, 
       fit: BoxFit.cover,
-      color: Theme.of(context).primaryColorLight.withOpacity(0.9),
-      colorBlendMode: (menu_list["body"][i]["sold"] == 1) ? BlendMode.softLight : BlendMode.dst
+      color: Theme.of(context).primaryColorLight.withOpacity(0.5),
+      colorBlendMode: (menu_list["body"][i]["sold"] == 1) ? BlendMode.modulate : BlendMode.dst
     ),
   );
   Widget buildIndicator(i) => AnimatedSmoothIndicator(
