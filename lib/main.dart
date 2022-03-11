@@ -71,7 +71,7 @@ class _MyHomePageState extends State<MyHomePage> {
             child: Container(
               height: MediaQuery.of(context).size.height - 200,
               alignment: Alignment.center,
-              child: CircularProgressIndicator()
+              child: CircularProgressIndicator(valueColor: AlwaysStoppedAnimation(Color.fromARGB(255, 230, 0, 18)))
             )
           ) : Column(
             children: <Widget>[
@@ -147,7 +147,7 @@ class _MyHomePageState extends State<MyHomePage> {
     child: Image.network(
       path, 
       fit: BoxFit.cover,
-      color: Theme.of(context).primaryColorLight.withOpacity(0.5),
+      color: Theme.of(context).primaryColorLight.withOpacity(0.9),
       colorBlendMode: (menu_list["body"][i]["sold"] == 1) ? BlendMode.softLight : BlendMode.dst
     ),
   );
