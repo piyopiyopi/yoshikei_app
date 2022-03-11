@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
         disabledColor: Color.fromARGB(255, 200, 200, 200),
         primaryColorLight: Colors.white,
         scaffoldBackgroundColor: Colors.white,
-        textTheme: GoogleFonts.hachiMaruPopTextTheme(Theme.of(context).textTheme),
+        textTheme: GoogleFonts.yuseiMagicTextTheme(Theme.of(context).textTheme),
       ),
       home: const MyHomePage(title: 'YOSHIKEI APP'),
     );
@@ -82,9 +82,9 @@ class _MyHomePageState extends State<MyHomePage> {
                   alignment: Alignment.center,
                   child: Text(
                     menu_list["body"][i]["date"], 
-                    style: TextStyle(
-                      fontSize: 18, 
-                      color: Theme.of(context).primaryColorLight
+                    style: GoogleFonts.hachiMaruPop(
+                      color: Theme.of(context).primaryColorLight,
+                      fontSize: 18,
                     ),
                   ),
                 ),
